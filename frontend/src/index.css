@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Serif+Caption:ital@0;1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Zen+Dots&display=swap');
+
+@import "tailwindcss";
+@plugin "daisyui" {
+  themes: all;
+}
+
+/* Height related styling */
+
+.h-settings {
+    min-height: calc(100vh - 80px); 
+    height: fit-content;
+}
+.h-custom {
+    height: calc(100vh - 80px);
+}
+.h-chatbox {
+    height: calc(100vh - 242px);
+}
+
+@media (width >= 64rem) {
+    .h-chatbox {
+        height: calc(100vh - 144px);
+    }
+    .h-sidebar-desktop {
+        height: calc(100vh - 144px);
+    }
+} 
+/* Font related styling */
+.serif {
+    font-family: "PT Serif Caption", serif;
+    font-style: normal;
+}
+
+.roboto {
+    font-family: "Roboto Condensed", sans-serif;
+    font-style: normal;
+}
+
+.zen-dots {
+font-family: "Zen Dots", sans-serif;
+font-style: normal;
+}
