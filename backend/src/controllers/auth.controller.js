@@ -41,8 +41,11 @@ export const signup = async (req, res) => {
 
         console.log("New User created Successfully ");
 
-        const port = req.headers["x-port"] || "5173";
-        generateToken(newUser._id, res, port);
+        // Only in case of Development when we have to test application for multiple users by using different port
+        // const port = req.headers["x-port"] || "5173";
+        // generateToken(user._id, res, port);
+
+        generateToken(user._id, res);
 
         return res.status(201).json({
             message : "User Created Successfully",
@@ -100,9 +103,11 @@ export const login = async (req, res) => {
                 success : false
             })
         }
-        
-        const port = req.headers["x-port"] || "5173";
-        generateToken(user._id, res, port);
+        // Only in case of Development when we have to test application for multiple users by using different port
+        // const port = req.headers["x-port"] || "5173";
+        // generateToken(user._id, res, port);
+
+        generateToken(user._id, res);
 
         return res.status(200).json({
             message : "User login successfully",
@@ -119,9 +124,14 @@ export const login = async (req, res) => {
 }
 
 export const logout = (req, res) => {
-    const port = req.headers["x-port"] || "5173";
+    // Only in case of Development when we have to test application for multiple users by using different port
+    // const port = req.headers["x-port"] || "5173";
     try {
-        res.cookie(`token_${port}`, "", {
+        // res.cookie(`token_${port}`, "", {
+        //     maxAge : 0,
+        // })
+
+        res.cookie("token", "", {
             maxAge : 0,
         })
 

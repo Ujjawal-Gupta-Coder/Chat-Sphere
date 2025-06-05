@@ -1,13 +1,17 @@
 import jwt from 'jsonwebtoken';
 
-export const generateToken = (userID, res, port) => {
+// accept *port* as third parameter in development for test multiple users
+export const generateToken = (userID, res) => {
     
     const token = jwt.sign({userID}, process.env.SECRET_KEY_JWT, {
         expiresIn : '7d'
     })
 
-    const cookieName = `token_${port}`;
-    res.cookie(cookieName, token, {
+    // Only in case of Development when we have to test application for multiple users by using different port
+    // const cookieName = `token_${port}`;
+    // pass this *cookieName* to res.cookie();
+    
+    res.cookie("token", token, {
         maxAge : 7 * 24 * 60 * 60 * 1000,
         httpOnly : true,
         secure : process.env.NODE_ENV !== "development",

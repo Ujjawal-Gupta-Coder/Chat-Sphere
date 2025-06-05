@@ -2,9 +2,11 @@ import jwt from "jsonwebtoken";
 import userModel from "../models/user.model.js";
 
 export const authenticateUser = async (req, res, next) => {
-    const port = req.headers["x-port"];
-    const token = req.cookies[`token_${port}`]; 
+    // Only in case of Development when we have to test application for multiple users by using different port
+    // const port = req.headers["x-port"];
+    // const token = req.cookies[`token_${port}`]; 
     
+    const token = req.cookies.token;
     if(!token) {
         return res.status(401).json({
             message : "Token not provided",
