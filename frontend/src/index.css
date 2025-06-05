@@ -9,12 +9,12 @@
 
 /* Height related styling */
 
-.h-settings {
-    min-height: calc(100vh - 80px); 
-    height: fit-content;
-}
 .h-custom {
     height: calc(100vh - 80px);
+}
+.h-custom-2 {
+    min-height: calc(100vh - 80px); 
+    height: fit-content;
 }
 .h-chatbox {
     height: calc(100vh - 242px);

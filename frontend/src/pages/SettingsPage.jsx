@@ -11,7 +11,7 @@ const SettingsPage = () => {
     setTheme(newTheme);
   }
   return (
-    <div data-theme={theme} className="h-settings">
+    <div data-theme={theme} className="h-custom-2">
       
       <div className="pt-3 flex flex-col gap-2 px-8">
         

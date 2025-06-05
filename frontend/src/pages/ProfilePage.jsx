@@ -70,7 +70,7 @@ const ProfilePage = () => {
     
   
   return (
-    <div data-theme={theme} className='py-4 px-2 flex flex-col justify-center gap-6 items-center bg-base-100 h-custom'>
+    <div data-theme={theme} className='py-4 px-2 flex flex-col justify-center gap-6 items-center bg-base-100 h-custom-2'>
       <Toaster
         position="top-center"
         reverseOrder={false}
@@ -78,8 +78,8 @@ const ProfilePage = () => {
 
       <div className='relative flex flex-col justify-center py-4 items-center gap-2 bg-base-300/90 border-1 border-base-content lg:p-4 rounded-2xl w-[95%] max-w-[550px]'>
          <div className='flex flex-col justify-center items-center'>
-          <p className='text-4xl text-primary font-bold zen-dots'>Profile</p>
-          <p className='text-primary serif'>Your profile information</p>
+          <p className='text-4xl text-base-content font-bold zen-dots'>Profile</p>
+          <p className='text-base-content serif'>Your profile information</p>
          </div>
 
 
