@@ -7,7 +7,11 @@ dotenv.config()
 const app = express();
 const server = http.createServer(app);
 const onlineUsersMap = {};  // socketId -- UserId
-const allowedOrigins = process.env.ALLOWED_ORIGINS?.split(',').map(origin => origin.trim());
+let allowedOrigins = process.env.ALLOWED_ORIGINS;
+
+if(process.env.NODE_ENV === "development") {
+    allowedOrigins = process.env.ALLOWED_ORIGINS?.split(',').map(origin => origin.trim());
+}
 
 const io = new Server(server, {
     cors: {

@@ -24,5 +24,4 @@ user_profile
 *.sln
 *.sw?
 
-
 .env

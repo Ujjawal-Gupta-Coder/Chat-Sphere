@@ -39,7 +39,7 @@ export const signup = async (req, res) => {
             fullName
         });
 
-        console.log("New User created Successfully : ", newUser);
+        console.log("New User created Successfully ");
 
         const port = req.headers["x-port"] || "5173";
         generateToken(newUser._id, res, port);
@@ -64,9 +64,6 @@ export const signup = async (req, res) => {
             success : false,
         })
     }
-
-
-
 }
 
 export const login = async (req, res) => {

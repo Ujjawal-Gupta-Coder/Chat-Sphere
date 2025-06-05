@@ -1,7 +1,6 @@
 import { create } from 'zustand'
 import api from '../api/axios';
 import toast from 'react-hot-toast';
-import socketStore from './socketStore';
 const messagesStore = create((set, get) => (
     {
         allContacts : [],
@@ -9,6 +8,7 @@ const messagesStore = create((set, get) => (
         contactLoading: false,
 
         getAllContacts : async () => {
+            
             try {
                 set({contactLoading: true})
                 const {setSelectedContact} = get();

@@ -12,14 +12,14 @@ const ProfilePage = () => {
   const {authUser, checkAuth} = authStore();
   
   const { theme } = themeStore();
-  const Navigate = useNavigate();
+  const navigate = useNavigate();
   const imagePickerRef = useRef(null);
   const [preview, setPreview] = useState(`${authUser && authUser.profilePicture ? authUser.profilePicture : avatar}`);
 
   const [belowImageText, setBelowImageText] = useState("Click the camera icon to update your photo");
 
   useEffect(() => {
-    if(!authUser) return Navigate('/signup');
+    if(!authUser) return navigate('/signup');
   }, []);
 
   const handleCameraIconClick = () => {

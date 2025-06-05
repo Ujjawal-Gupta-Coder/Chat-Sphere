@@ -19,10 +19,7 @@ const authStore = create((set) => ({
         } finally {
             set({isCheckingAuth : false})
         }
-    }
-
-    
+    }  
 }))
-
 
 export default authStore;

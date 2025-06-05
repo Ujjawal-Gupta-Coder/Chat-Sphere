@@ -16,7 +16,7 @@ const SignUpPage = () => {
     const [showPassword, setShowPassword] = useState(false);
     const {register, handleSubmit, formState:{errors, isSubmitting}, } = useForm();
     const { authUser, checkAuth } = authStore();
-    const Navigate = useNavigate();
+    const navigate = useNavigate();
 
 
     const handleShowPassword = (e) => {
@@ -29,8 +29,7 @@ const SignUpPage = () => {
         const response = await api.post('/auth/signup', formData);
         toast.success(response.data.message)
         checkAuth();
-        Navigate('/');
-
+        return navigate('/');
       } catch(error) {
         if(!error.response) toast.error("Server is temporarily unavailable. We're working to fix this—please try again shortly.");
         else toast.error(error.response.data ? error.response.data.message : "An error occurred, please try again.");
@@ -39,8 +38,8 @@ const SignUpPage = () => {
     }
 
     useEffect(() => {
-      if(authUser) return Navigate('/')
-    }, []);
+      if(authUser) return navigate('/')
+    }, [authUser]);
   return (
     <div data-theme={theme} className='w-full flex h-custom' >
       <Toaster

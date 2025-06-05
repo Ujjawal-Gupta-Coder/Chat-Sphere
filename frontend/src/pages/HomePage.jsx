@@ -11,15 +11,15 @@ import messagesStore from '../store/messagesStore';
 const HomePage = () => {
   const {authUser} = authStore();
   const { theme } = themeStore();
-   const Navigate = useNavigate();
+   const navigate = useNavigate();
   const { selectedContact, getAllContacts } = messagesStore();
 
   useEffect(() => {
     if(!authUser) {
-      Navigate('/signup');
+      return navigate('/signup');
     } 
     else getAllContacts();
-  }, []);
+  }, [authUser]);
 
   return (
     <div data-theme={theme} className='h-custom flex flex-col lg:flex-row lg:p-8 lg:gap-2'>
@@ -27,9 +27,6 @@ const HomePage = () => {
         position="top-center"
         reverseOrder={false}
       />
-
-      
-      {/* at last entire home page mein *Coloring* karna hai + for mobile screen chatBox ko full screen per display */}
 
       <Sidebar />
       {selectedContact ? <Chatbox /> : <NoChatbox />}
