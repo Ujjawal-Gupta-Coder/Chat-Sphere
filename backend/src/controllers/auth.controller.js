@@ -132,6 +132,9 @@ export const logout = (req, res) => {
         // })
 
         res.cookie("token", "", {
+            httpOnly: true,
+            secure: process.env.NODE_ENV !== "development",
+            sameSite: process.env.NODE_ENV === "development" ? "strict" : "none",
             maxAge : 0,
         })
 
