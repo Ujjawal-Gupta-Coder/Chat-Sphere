@@ -45,7 +45,7 @@ export const signup = async (req, res) => {
         // const port = req.headers["x-port"] || "5173";
         // generateToken(user._id, res, port);
 
-        generateToken(user._id, res);
+        generateToken(newUser._id, res);
 
         return res.status(201).json({
             message : "User Created Successfully",
