@@ -24,7 +24,7 @@ const Sidebar = () => {
   let contactsToDisplay = [];
 
   return (
-    <div className='lg:w-[23%] flex flex-col h-sidebar-desktop lg:border-1 lg:gap-2 lg:rounded-2xl lg:p-4'>
+    <div className='lg:w-[23%] bg-base-300 flex flex-col h-sidebar-desktop lg:border-1 lg:gap-2 lg:rounded-2xl lg:p-4'>
       <div className='flex lg:flex-col items-center lg:items-start justify-between gap-2 p-2'>
         <div className='flex-1 lg:w-full'> <Search /> </div>
 

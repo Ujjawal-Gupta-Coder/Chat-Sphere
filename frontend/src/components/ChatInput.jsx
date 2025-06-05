@@ -71,7 +71,7 @@ const ChatInput = () => {
     }
   }
   return (
-    <div className='h-[60px] relative flex items-center justify-center gap-2 lg:gap-6 px-4 py-6 mb-3 lg:mb-0 lg:px-32 md:px-16 sm:px-8 '>
+    <div className='h-[60px] relative flex items-center justify-center gap-2 lg:gap-6 px-4 py-6 lg:px-32 md:px-16 sm:px-8 '>
       <Toaster
         position="top-center"
         reverseOrder={false}
