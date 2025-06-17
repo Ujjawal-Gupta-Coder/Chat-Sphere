@@ -31,8 +31,7 @@ const App = () => {
   }
 
   return (
-    <>  
-      <CountdownLoader />  
+    <>   
       <Navbar />
 
       <Routes>
