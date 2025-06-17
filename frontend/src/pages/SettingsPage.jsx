@@ -19,16 +19,16 @@ const SettingsPage = () => {
         
         <div className="flex flex-wrap justify-center sm:justify-normal gap-1">
           {
-            themesList.map((theme, idx) => {
-              return <button key={idx} onClick={handleThemeChange}  className="cursor-pointer hover:bg-base-content rounded-md p-1 space-y-1 group">
-            <div data-theme={theme} className="flex gap-[3px] p-[3px] bg-base-100 w-[135px] h-[30px] rounded-md relative">
+            themesList.map((showTheme, idx) => {
+              return <button key={idx} onClick={handleThemeChange}  className={`cursor-pointer hover:bg-base-content ${theme && theme === showTheme ? "bg-base-content":""} rounded-md p-1 space-y-1 group`}>
+            <div data-theme={showTheme} className="flex gap-[3px] p-[3px] bg-base-100 w-[135px] h-[30px] rounded-md relative">
               <div className="bg-primary h-full w-[25%] rounded-md" ></div>
               <div className="bg-secondary h-full w-[25%] rounded-md" ></div>
               <div className="bg-accent h-full w-[25%] rounded-md"></div>
               <div className="bg-neutral h-full w-[25%] rounded-md"></div>
             </div>
 
-            <div className="text-base-content group-hover:text-base-100 serif">{theme[0].toUpperCase() + theme.slice(1)}</div>
+            <div className={`${theme && theme === showTheme ? "text-base-100":"text-base-content"}  group-hover:text-base-100 serif`}>{showTheme[0].toUpperCase() + showTheme.slice(1)}</div>
             </button>
             })
           }
