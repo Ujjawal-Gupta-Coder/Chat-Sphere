@@ -13,16 +13,17 @@ import CountdownLoader from './components/CountDownLoader.jsx'
 
 const App = () => {
   const { checkAuth, isCheckingAuth } = authStore();
-  let isFirstRender = useRef(true); 
-  
+  const isFirstRender = useRef(true); 
+  const hasShownCountdown = useRef(false);
   useEffect(() => {
     checkAuth();
   }, [checkAuth]);  
 
 
   if(isCheckingAuth) {
-    if(isFirstRender.current) {
+    if(isFirstRender.current && !hasShownCountdown.current) {
       isFirstRender.current = false;
+      hasShownCountdown.current = true;
       return <CountdownLoader />
     }
     else {
