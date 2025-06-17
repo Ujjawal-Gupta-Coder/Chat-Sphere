@@ -9,6 +9,7 @@ import toast, { Toaster } from 'react-hot-toast';
 import authStore from '../store/authStore';
 import themeStore from '../store/themeStore';
 import AuthDecoration from '../components/AuthDecoration.jsx';
+import GuestLoginModal from '../components/GuestLoginModal.jsx';
 
 const SignUpPage = () => {
   
@@ -17,7 +18,7 @@ const SignUpPage = () => {
     const {register, handleSubmit, formState:{errors, isSubmitting}, } = useForm();
     const { authUser, checkAuth } = authStore();
     const navigate = useNavigate();
-
+    const [showDemoModal, setshowDemoModal] = useState(false);
 
     const handleShowPassword = (e) => {
       e.preventDefault();
@@ -41,11 +42,25 @@ const SignUpPage = () => {
       if(authUser) return navigate('/')
     }, [authUser]);
   return (
-    <div data-theme={theme} className='w-full flex h-custom' >
+    <div data-theme={theme} className='w-full flex flex-col lg:flex-row h-custom' >
       <Toaster
         position="top-center"
         reverseOrder={false}
       />
+
+      <div className='relative lg:absolute z-10 flex items-center w-full justify-center my-4'>
+          <button
+          onClick={() => setshowDemoModal(true)}
+          className="bg-gradient-to-r cursor-pointer from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 py-3 rounded-xl font-semibold shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
+        >
+          🎯 Explore as a Guest
+        </button>
+      </div>
+
+      {
+        showDemoModal && <GuestLoginModal setshowDemoModal={setshowDemoModal}/>
+      }
+
       {/* left */}
       <div className='w-full lg:w-1/2 h-custom bg-base-100 flex justify-center items-center flex-col gap-4 relative pb-4'>
         <div className='flex justify-center items-center flex-col'>
