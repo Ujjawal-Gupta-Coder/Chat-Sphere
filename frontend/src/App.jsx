@@ -1,4 +1,4 @@
-import { useEffect } from 'react'
+import { useEffect, useRef } from 'react'
 import {Routes, Route} from 'react-router-dom'
 import authStore from './store/authStore.js'
 import HomePage from './pages/HomePage.jsx'
@@ -9,21 +9,30 @@ import ProfilePage from './pages/ProfilePage.jsx'
 import Navbar from './components/Navbar'
 import Loader from './components/Loader.jsx'
 import Footer from './components/Footer.jsx'
+import CountdownLoader from './components/CountDownLoader.jsx'
 
 const App = () => {
   const { checkAuth, isCheckingAuth } = authStore();
-
+  let isFirstRender = useRef(true); 
+  
   useEffect(() => {
     checkAuth();
   }, [checkAuth]);  
 
 
   if(isCheckingAuth) {
-    return <Loader />
+    if(isFirstRender.current) {
+      isFirstRender.current = false;
+      return <CountdownLoader />
+    }
+    else {
+      return <Loader />
+    }  
   }
 
   return (
-    <>    
+    <>  
+      <CountdownLoader />  
       <Navbar />
 
       <Routes>
