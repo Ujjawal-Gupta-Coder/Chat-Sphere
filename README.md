@@ -6,7 +6,7 @@
 # [Chat Sphere](https://chat-sphere-eosin.vercel.app/)
 </div>
 
-🌟 Experience the full functionality of this Chat Sphere Application by exploring the [Live Demo](https://chat-sphere-eosin.vercel.app/). Click the link to see it in action and enjoy!
+🌟 Experience the full functionality of this Chat Sphere Application by exploring the [Live Demo](https://chat-sphere-eosin.vercel.app/). Click the link to see it in action and enjoy!🎥 You can also watch the detailed Video Demo on [YouTube](https://youtu.be/UB_IZiclm9o?si=KEGzFy0KKw9B4cNN) for a visual walkthrough.
 
 ChatSphere is a modern, full-featured real-time chat application built with the MERN stack and powered by Socket.io for seamless two-way communication. It offers secure JWT-based login with encrypted passwords and cookie-based sessions. Users can send and receive both text and image messages, with all media stored securely in the cloud for reliable access anytime. The app includes smart features like real-time typing indicators, image previews, sound notifications, and smooth auto-scroll for new messages. With over 30+ beautiful themes to personalize your experience, full mobile responsiveness, and contact filters to show only online users, ChatSphere delivers a fast, elegant, and intuitive messaging platform that works effortlessly across all devices.
 
